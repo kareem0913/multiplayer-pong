@@ -1,7 +1,12 @@
 // Canvas Related
 const canvas = document.createElement("canvas");
 const context = canvas.getContext("2d");
-const socket = io("/pong");
+// const socket = io("/pong");
+const socket = io("/api/socket-io");
+// const socket = io("/api/socket-io", {
+//   path: "/api/socket-io",
+// });
+
 let isReferee = false;
 let paddleIndex = 0;
 

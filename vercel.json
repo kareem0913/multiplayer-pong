@@ -1,5 +1,11 @@
 {
   "version": 2,
-  "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/api.js" }]
+  "builds": [
+    { "src": "api/api.js", "use": "@vercel/node" },
+    { "src": "api/socket-io.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/socket-io", "dest": "/api/socket-io.js" },
+    { "src": "/(.*)", "dest": "/api/api.js" }
+  ]
 }
